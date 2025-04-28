@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post-Quantum Secure Messaging</title>
+    <style>
+        body {
+            background-color: #f2f6fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: vertical;
+            font-size: 14px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        .key-section, .encryption-section, .cipher-section, .decryption-section, .decrypted-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Post-Quantum Secure Messaging</h1>
+
+    <!-- Generate Keys -->
+    <form method="POST">
+        <button name="action" value="generate_keys">Generate Public & Private Keys</button>
+    </form>
+
+    {% if public_key and private_key %}
+    <div class="key-section">
+        <h2>Your Keys</h2>
+        <label>Public Key:</label>
+        <textarea readonly>{{ public_key }}</textarea>
+
+        <label>Private Key:</label>
+        <textarea readonly>{{ private_key }}</textarea>
+    </div>
+
+    <!-- Encrypt a Message -->
+    <div class="encryption-section">
+        <h2>Encrypt a Message</h2>
+        <form method="POST">
+            <input type="hidden" name="public_key" value="{{ public_key }}">
+            <input type="hidden" name="private_key" value="{{ private_key }}">
+            <textarea name="message" placeholder="Enter message to encrypt..." required></textarea>
+            <button name="action" value="encrypt">Encrypt Message</button>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if ciphertext_kem and encrypted_message %}
+    <div class="cipher-section">
+        <h2>Encrypted Output</h2>
+        <label>Ciphertext (Kyber Encrypted Shared Key):</label>
+        <textarea readonly>{{ ciphertext_kem }}</textarea>
+
+        <label>Encrypted Message (AES Encrypted):</label>
+        <textarea readonly>{{ encrypted_message }}</textarea>
+    </div>
+
+    <!-- Decrypt a Message -->
+    <div class="decryption-section">
+        <h2>Decrypt the Message</h2>
+        <form method="POST">
+            <input type="hidden" name="public_key" value="{{ public_key }}">
+            <input type="hidden" name="private_key" value="{{ private_key }}">
+            <input type="hidden" name="ciphertext_kem" value="{{ ciphertext_kem }}">
+            <input type="hidden" name="encrypted_message" value="{{ encrypted_message }}">
+            <button name="action" value="decrypt">Decrypt Message</button>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if decrypted_message %}
+    <div class="decrypted-section">
+        <h2>Decrypted Message</h2>
+        <textarea readonly>{{ decrypted_message }}</textarea>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
