@@ -35,4 +35,4 @@ pip install -r requirements.txt
 
 ### Deployment
 - Run .\deploy.ps1
-- Access at: 
+- Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
