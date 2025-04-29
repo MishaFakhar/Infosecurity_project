@@ -45,8 +45,6 @@ pip install -r requirements.txt
   deploy.ps1           - Windows deployment
 
 ### ⚠️ Troubleshooting
-  Module errors: pip install -r requirements.txt --force-reinstall
-  
-  Port conflicts: Change port=5001 in app.py
-  
-  Key errors: Ensure .env exists with SECRET_KEY
+  - Module errors: pip install -r requirements.txt --force-reinstall
+  - Port conflicts: Change port=5001 in app.py
+  - Key errors: Ensure .env exists with SECRET_KEY
