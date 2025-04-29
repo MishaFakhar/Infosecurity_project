@@ -38,11 +38,11 @@ pip install -r requirements.txt
 - Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
 
 ### 📂 Files
-  app.py                - Main application
-  requirements.txt      - Dependencies
-  static/style.css      - CSS styles
-  templates/index.html  - Frontend template
-  deploy.ps1           - Windows deployment
+  -- app.py                - Main application
+  -- requirements.txt      - Dependencies
+  -- static/style.css      - CSS styles
+  -- templates/index.html  - Frontend template
+  -- deploy.ps1           - Windows deployment
 
 ### ⚠️ Troubleshooting
   - Module errors: pip install -r requirements.txt --force-reinstall
