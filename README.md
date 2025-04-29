@@ -18,7 +18,7 @@ A Flask web application demonstrating quantum-resistant encryption using Kyber76
 ```bash
 # Clone repository
 git clone https://github.com/Jannat-Butt/infosecurity_projects.git
-cd infosecurity_project
+cd infosecurity_projects
 
 # Create virtual environment
 python -m venv venv
