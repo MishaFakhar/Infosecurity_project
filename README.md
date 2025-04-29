@@ -38,11 +38,12 @@ pip install -r requirements.txt
 - Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
 
 ### 📂 Files
-  -- app.py                - Main application
-  -- requirements.txt      - Dependencies
-  -- static/style.css      - CSS styles
-  -- templates/index.html  - Frontend template
-  -- deploy.ps1           - Windows deployment
+  - **`app.py`**: Core Flask application with encryption logic
+  - **`requirements.txt`**: Lists all Python packages needed (`flask`, `cryptography`, etc.)
+  - **`static/style.css`**: Custom styling for the web interface
+  - **`templates/index.html`**: Frontend HTML with message forms
+  - **`deploy.ps1`**: Windows script to launch Flask + Cloudflare tunnel
+
 
 ### ⚠️ Troubleshooting
   - Module errors: pip install -r requirements.txt --force-reinstall
