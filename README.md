@@ -36,3 +36,17 @@ pip install -r requirements.txt
 ### Deployment
 - Run .\deploy.ps1
 - Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
+
+### 📂 Files
+  app.py                - Main application
+  requirements.txt      - Dependencies
+  static/style.css      - CSS styles
+  templates/index.html  - Frontend template
+  deploy.ps1           - Windows deployment
+
+### ⚠️ Troubleshooting
+  Module errors: pip install -r requirements.txt --force-reinstall
+  
+  Port conflicts: Change port=5001 in app.py
+  
+  Key errors: Ensure .env exists with SECRET_KEY
