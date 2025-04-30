@@ -33,9 +33,13 @@ pip install -r requirements.txt
   - python app.py
   - Access at: http://localhost:5000
 
-### Deployment
-- Run .\deploy.ps1
-- Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
+### Public Deployment
+  - Access at: https://imjannatbutt.pythonanywhere.com/
+  - 
+### Private Deployment
+  - Run .\deploy.ps1
+  - Access at: https://entity-asia-gratis-patterns.trycloudflare.com/
+
 
 ### 📂 Files
   - **`app.py`**: Core Flask application with encryption logic
