@@ -1,4 +1,4 @@
-# 🔐 Post-Quantum Secure Messaging App
+# 🔐 Post-Quantum Secure Messaging Site
 
 A Flask web application demonstrating quantum-resistant encryption using Kyber768 and AES-GCM.
 
